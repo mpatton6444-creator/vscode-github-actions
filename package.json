@@ -8,7 +8,7 @@
     "url": "https://github.com/github/vscode-github-actions"
   },
   "description": "GitHub Actions workflows and runs for github.com hosted repositories in VS Code",
-  "version": "0.28.0",
+  "version": "0.31.5",
   "engines": {
     "vscode": "^1.72.0",
     "node": ">= 16"
@@ -25,7 +25,9 @@
   "activationEvents": [
     "onView:workflows",
     "onView:settings",
-    "workspaceContains:**/.github/workflows/**"
+    "workspaceContains:**/.github/workflows/**",
+    "workspaceContains:**/action.yml",
+    "workspaceContains:**/action.yaml"
   ],
   "main": "./dist/extension-node.js",
   "browser": "./dist/extension-web.js",
@@ -561,8 +563,8 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@actions/languageserver": "^0.3.19",
-    "@actions/workflow-parser": "^0.3.19",
+    "@actions/languageserver": "^0.3.46",
+    "@actions/workflow-parser": "^0.3.46",
     "@octokit/rest": "^21.1.1",
     "@vscode/vsce": "^2.19.0",
     "buffer": "^6.0.3",
